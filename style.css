@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("https://i.ibb.co/h7W0BfZ/Pn-C-Background.jpg");
+    background-size: cover;
+  }
+  
+  #top {
+    text-align: center;
+    padding-top: 120px;
+    font-family: 'Sacramento', cursive;
+    font-size: 1.875rem;
+    color: #046633;
+  }
+  
+  #gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #top-row, #bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  #top-row {
+    margin-bottom: 20px;
+  }
+  
+  .gallery-item {
+    text-align: center;
+    margin: 20px 10px;
+    flex: 1 1 auto;
+    max-width: 200px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .gallery-item h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: small;
+  }
+  
