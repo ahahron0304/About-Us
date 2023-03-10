@@ -1,52 +1,79 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-image: url("https://i.ibb.co/h7W0BfZ/Pn-C-Background.jpg");
-    background-size: cover;
-  }
-  
-  #top {
-    text-align: center;
-    padding-top: 120px;
-    font-family: 'Sacramento', cursive;
-    font-size: 1.875rem;
-    color: #046633;
-  }
-  
-  #gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #top-row, #bottom-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  
-  #top-row {
-    margin-bottom: 20px;
-  }
-  
-  .gallery-item {
-    text-align: center;
-    margin: 20px 10px;
-    flex: 1 1 auto;
-    max-width: 200px;
-  }
-  
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .gallery-item h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: small;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("https://i.ibb.co/h7W0BfZ/Pn-C-Background.jpg");
+  background-size: cover;
+}
+
+#top {
+  text-align: center;
+  padding-top: 120px;
+  font-family: 'Merriweather', serif;
+  font-size: 1.875rem;
+  color: #046633;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+}
+
+#top-row,
+#bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#top-row {
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  text-align: center;
+  margin: 20px 10px;
+  flex: 1 1 auto;
+  max-width: 200px;
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.gallery-item::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  content: '';
+  opacity: 0;
+  z-index: -1;
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale3d(1.006, 1.006, 1);
+}
+
+.gallery-item:hover::after,
+.gallery-item:focus::after {
+  opacity: 1;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: small;
+}
